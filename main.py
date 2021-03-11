@@ -7,13 +7,13 @@ Created on Thu Mar  4 10:06:23 2021
 import cv2 #for image processing
 import easygui #to open the filebox
 import numpy as np #to store image
-import imageio #to read image stored at particular path
+#import imageio #to read image stored at particular path
 import sys
 import matplotlib.pyplot as plt
 import os
 from scipy import interpolate
 import tkinter as tk
-#from tkinter import filedialog
+
 from tkinter import *
 #from PIL import ImageTk, Image
 
@@ -99,7 +99,7 @@ def warmImage(ImagePath):
     
     resized=cv2.resize(filtered,(800,800))
     
-    save1=Button(top,text="warm filtered image",command=lambda: save(resized,ImagePath,"emboss_img"),padx=30,pady=5)
+    save1=Button(top,text="warm filtered image",command=lambda: save(resized,ImagePath,"warm_img"),padx=30,pady=5)
     save1.configure(background='#364156', foreground='white',font=('calibri',10,'bold'))
     save1.pack(side=TOP,pady=30)
 
@@ -121,7 +121,7 @@ def coldImage(ImagePath):
     
     resized=cv2.resize(filt,(800,800))
     
-    save1=Button(top,text="cold filtered image",command=lambda: save(resized,ImagePath,"emboss_img"),padx=30,pady=5)
+    save1=Button(top,text="cold filtered image",command=lambda: save(resized,ImagePath,"cold_img"),padx=30,pady=5)
     save1.configure(background='#364156', foreground='white',font=('calibri',10,'bold'))
     save1.pack(side=TOP,pady=30)
 
